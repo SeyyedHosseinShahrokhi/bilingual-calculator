@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="title">گزارش مشکل یا پیشنهاد</title>
+    <meta name="description" content="گزارش" data-i18n-attr-content="description">
+
+    <!-- رنگ تم برای مرورگر - این‌ها با جاوااسکریپت بروزرسانی می‌شوند -->
+    <meta name="theme-color" id="theme-color-light" media="(prefers-color-scheme: light)" content="#F0F4F8">
+    <meta name="theme-color" id="theme-color-dark" media="(prefers-color-scheme: dark)" content="#0b2230">
+
+    <!-- Icons -->
+    <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/icons/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/styles-report.css">
+
+    <!-- اسکریپت تم باید در head باشد تا از چشمک زدن (FOUC) جلوگیری کند -->
+    <script src="/assets/js/theme.js"></script>
+</head>
+<body>
+
+<main class="report-page">
+    <div id="form-container">
+        <header class="report-page__header">
+            <h1 class="report-page__title">گزارش یک ناهنجاری کیهانی!</h1>
+            <p class="report-page__subtitle">با گزارش مشکلات یا ارائه پیشنهاد، به ما در بهبود کهکشان محاسبات کمک کنید.</p>
+        </header>
+
+        <form id="report-form" class="report-form" novalidate>
+            <div class="form-group">
+                <label class="form-group__label">نوع گزارش:</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="bug" name="report_type" value="bug" checked>
+                        <label for="bug">🐞 گزارش مشکل (باگ)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="suggestion" name="report_type" value="suggestion">
+                        <label for="suggestion">💡 پیشنهاد ویژگی جدید</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="other" name="report_type" value="other">
+                        <label for="other">🤔 سایر موارد</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="form-group__label">توضیحات:</label>
+                <textarea id="description" name="description" class="form-group__input" rows="6" placeholder="لطفاً با جزئیات توضیح دهید. مثلاً:
+- چه کاری انجام می‌دادید؟
+- انتظار داشتید چه اتفاقی بیفتد؟
+- در عمل چه اتفاقی افتاد؟" required></textarea>
+                <p class="form-group__error-text" id="description-error"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-group__label">ایمیل شما (اختیاری):</label>
+                <input type="email" id="email" name="email" class="form-group__input" placeholder="برای پیگیری‌های احتمالی">
+                <p class="form-group__help-text">ما به ایمیل شما احترام می‌گذاریم و اسپم ارسال نمی‌کنیم.</p>
+            </div>
+
+            <!-- این فیلد توسط جاوا اسکریپت به صورت خودکار پر می‌شود -->
+            <input type="hidden" id="device-info" name="device_info">
+
+            <button type="submit" id="submit-btn" class="button">ارسال گزارش</button>
+        </form>
+    </div>
+
+    <!-- پیام موفقیت‌آمیز بودن ارسال -->
+    <div id="success-message" class="form-status form-status--success" hidden>
+        <h2>پیام شما دریافت شد! 🚀</h2>
+        <p>از اینکه وقت گذاشتید سپاسگزاریم. تیم ما هر گزارش را با دقت بررسی می‌کند. ممکن است نتوانیم به همه پاسخ دهیم، اما مطمئن باشید صدای شما را شنیدیم.</p>
+        <a href="/" class="button">بازگشت به ماشین حساب</a>
+    </div>
+</main>
+
+<script src="/assets/js/script-report.js" defer></script>
+</body>
+</html>

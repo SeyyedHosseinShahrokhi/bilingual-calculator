@@ -1,0 +1,143 @@
+/* ==========================================================================
+   2. Modern CSS Reset & Base Styles
+   ========================================================================== */
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   3. Component: Error Page Layout
+   ========================================================================== */
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: clamp(1rem, 4dvh, 1.5rem);
+    width: clamp(280px, 90vw, 500px);
+}
+
+.error-page__animation {
+    width: clamp(250px, 50vw, 300px);
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.error-page__title {
+    font-size: clamp(1.5rem, 5vw + 0.5rem, 2rem);
+    line-height: 1.4;
+}
+
+.error-page__text {
+    font-size: clamp(0.9rem, 2vw + 0.5rem, 1rem);
+    color: var(--text-color-secondary);
+    line-height: 1.6;
+    max-width: 40ch;
+}
+
+.error-page__actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.error-page__links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.error-page__links a {
+    color: var(--text-color-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.error-page__links a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.error-page__links span {
+    color: var(--surface-color);
+}
+
+/* ==========================================================================
+   4. Component: Reusable Button
+   ========================================================================== */
+.button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button:hover {
+    background-color: var(--accent-hover-color);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   5. Animations & Accessibility
+   ========================================================================== */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes search {
+    0% { transform: translate(50px, 75px) rotate(-5deg); }
+    50% { transform: translate(50px, 75px) rotate(5deg); }
+    100% { transform: translate(50px, 75px) rotate(-5deg); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.black-hole {
+    animation: rotate 20s linear infinite;
+    transform-origin: 150px 75px;
+}
+
+.robot-search {
+    animation: search 6s ease-in-out infinite;
+    transform-origin: 0 30px; /* Pivot from the robot's body */
+}
+
+.star {
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+.star2 { animation-delay: 0.8s; }
+.star3 { animation-delay: 1.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .black-hole, .robot-search, .star {
+        animation: none;
+    }
+}

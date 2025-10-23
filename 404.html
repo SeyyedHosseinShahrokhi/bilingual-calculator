@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="title">صفحه پیدا نشد (404)</title>
+  <meta name="description" content="404" data-i18n-attr-content="description">
+
+  <!-- رنگ تم برای مرورگر - این‌ها با جاوااسکریپت بروزرسانی می‌شوند -->
+  <meta name="theme-color" id="theme-color-light" media="(prefers-color-scheme: light)" content="#F0F4F8">
+  <meta name="theme-color" id="theme-color-dark" media="(prefers-color-scheme: dark)" content="#0b2230">
+
+  <!-- Icons -->
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/styles-404.css">
+
+  <!-- اسکریپت تم باید در head باشد تا از چشمک زدن (FOUC) جلوگیری کند -->
+  <script src="/assets/js/theme.js"></script>
+</head>
+<body>
+
+<main class="error-page">
+  <div class="error-page__animation">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+      <defs>
+        <linearGradient id="robot-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#4A5568;" />
+          <stop offset="100%" style="stop-color:#2D3748;" />
+        </linearGradient>
+        <radialGradient id="hole-gradient">
+          <stop offset="70%" stop-color="#1A202C" />
+          <stop offset="100%" stop-color="#4FD1C5" />
+        </radialGradient>
+      </defs>
+      <!-- Stars -->
+      <circle cx="10" cy="20" r="1" fill="#E2E8F0" class="star star1" />
+      <circle cx="190" cy="40" r="1.5" fill="#E2E8F0" class="star star2" />
+      <circle cx="50" cy="130" r="0.8" fill="#E2E8F0" class="star star3" />
+
+      <!-- Black Hole -->
+      <g class="black-hole">
+        <circle cx="150" cy="75" r="30" fill="url(#hole-gradient)"/>
+        <text x="150" y="82" font-family="Arial, sans-serif" font-size="24" fill="#E2E8F0" text-anchor="middle">404</text>
+      </g>
+
+      <!-- Robot with Telescope -->
+      <g class="robot-search" transform="translate(50, 75)">
+        <rect x="-15" y="10" width="30" height="40" rx="8" fill="url(#robot-gradient)" stroke="#718096" stroke-width="1.5"/>
+        <circle cx="0" cy="-10" r="18" fill="url(#robot-gradient)" stroke="#718096" stroke-width="1.5"/>
+        <circle cx="0" cy="-10" r="8" fill="#1A202C"/>
+        <path d="M 5 -10 L 40 0 L 35 10 Z" fill="#718096" />
+      </g>
+    </svg>
+  </div>
+
+  <h1 class="error-page__title">این آدرس در نقشه‌ی کیهانی ما نیست!</h1>
+  <p class="error-page__text">
+    شاید در وارد کردن آدرس عجله کرده‌اید یا این صفحه به یک بُعد دیگر سفر کرده! به هر حال، ما کمکتان می‌کنیم مسیر را پیدا کنید.
+  </p>
+
+  <div class="error-page__actions">
+    <a href="/" class="button">بازگشت به صفحه‌ی اصلی</a>
+    <div class="error-page__links">
+      <a href="/pages/history.html">مشاهده تاریخچه</a>
+      <span>|</span>
+      <a href="/pages/report.html">گزارش مشکل</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

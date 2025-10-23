@@ -1,0 +1,116 @@
+/* قفل اسکرول هنگام باز بودن مودال */
+body.pwa-modal-open { overflow: hidden; }
+
+/* Overlay: fade-in/out با pointer-events کنترل‌شده */
+.pwa-overlay {
+    position: fixed;
+    inset: 0;
+    display: grid;              /* برای سنتر مودال */
+    place-items: center;
+    background: var(--pwa-overlay);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 200ms ease, visibility 200ms step-end;
+}
+
+.pwa-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Modal: انیمیشن ورود نرم */
+.pwa-modal {
+    background: var(--pwa-primary);
+    color: var(--pwa-text);
+    border-radius: var(--pwa-radius);
+    padding: 20px;
+    width: min(90vw, 420px);
+    box-shadow: var(--pwa-shadow);
+    position: relative;
+
+    transform: translateY(10px) scale(0.98);
+    opacity: 0;
+    transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.pwa-modal h2 {
+    margin: 0 0 8px 0;
+}
+
+.pwa-modal p {
+    margin: 0;
+    color: var(--pwa-muted);
+}
+
+.pwa-overlay.is-active .pwa-modal {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.pwa-modal-close {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: none;
+    border: none;
+    color: var(--pwa-muted);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.pwa-modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.pwa-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: var(--pwa-radius);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pwa-btn-primary {
+    background: var(--pwa-secondary);
+    color: var(--pwa-text);
+}
+
+.pwa-btn-secondary {
+    background: transparent;
+    border: 1px solid var(--pwa-muted);
+    color: var(--pwa-text);
+}
+
+.pwa-modal-options {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    color: var(--pwa-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pwa-modal-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.pwa-modal-options input[type="checkbox"] {
+    cursor: pointer;
+}
+
+body.pwa-modal-open {
+    overflow: hidden;
+}
+
+/* احترام به کاهش حرکت */
+@media (prefers-reduced-motion: reduce) {
+    .pwa-overlay, .pwa-modal { transition: none !important; }
+}

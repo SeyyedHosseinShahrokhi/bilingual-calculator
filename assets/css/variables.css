@@ -1,0 +1,110 @@
+/* 1) متغیرهای مشترک (غیرتمی) */
+:root {
+    /* تایپوگرافی و افکت‌ها */
+    --radius: 14px;
+    --focus-ring: 0 0 0 3px rgba(17, 34, 51, 0.5);
+    --shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    --color-overlay: rgba(0, 0, 0, 0.6);
+
+    /* برند/اکسنت (در هر دو تم یکسان) */
+    --accent-color: #4FD1C5;
+    --accent-hover-color: #38B2AC;
+    --error-color: #F56565;
+    --success-color: #68D391;
+
+    /* توکن‌های PWA (در کد اولیه فقط یک ست داشتید، همان را حفظ می‌کنیم) */
+    /* Light theme defaults */
+    --pwa-primary: #FFFFFF;
+    --pwa-secondary: #E6EDF3;
+    --pwa-text: #0A1929;
+    --pwa-muted: #4B5563;
+    --pwa-overlay: rgba(0,0,0,0.45);
+    --pwa-radius: 12px;
+    --pwa-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* 2) تم روشن — پیش‌فرض: روی html بدون data-theme هم اعمال می‌شود */
+/* Manual override: light */
+:root[data-theme="light"], html[data-theme="light"] {
+    /* راهنمای مرورگر برای کنترل‌های بومی */
+    color-scheme: light;
+
+    /* ست UI عمومی (light) */
+    --background-color: #F0F4F8;     /* از bg روشن */
+    --surface-color: #FFFFFF;         /* از calc-bg روشن */
+    --text-color: #102A43;            /* متن عمومی */
+    --text-color-secondary: #334E68;  /* متن ثانویه */
+    --color-muted: #9BA7B4;           /* خاکستری خنثی/متن کم‌رنگ */
+
+    /* ست ماشین‌حساب (light) */
+    --bg-color: #F0F4F8;
+    --calc-bg-color: #FFFFFF;
+    --calc-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    --display-bg-color: #F0F4F8;
+    --display-text-color: #334E68;
+    --result-text-color: #102A43;
+    --button-bg-color: #E2E8F0;
+    --button-hover-bg-color: #CBD5E0;
+    --operator-color: #007BFF;
+    --special-button-color: #D9534F;
+    --equals-button-bg: #007BFF;
+    --equals-button-color: #FFFFFF;
+    --theme-icon-color: #475569;
+
+    --pwa-primary: #FFFFFF;
+    --pwa-secondary: #E6EDF3;
+    --pwa-text: #0A1929;
+    --pwa-muted: #4B5563;
+    --pwa-overlay: rgba(0,0,0,0.45);
+    --pwa-radius: 12px;
+    --pwa-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* 3) تم تاریک */
+/* Manual override: dark */
+:root[data-theme="dark"], html[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* ست UI عمومی (dark) — از بلاک‌های :root دیرتر شما گرفته شده */
+    --background-color: #1A202C;
+    --surface-color: #2D3748;
+    --text-color: #E2E8F0;            /* متن عمومی در تاریک */
+    --text-color-secondary: #A0AEC0;
+
+    /* ست ماشین‌حساب (dark) — از html[data-theme='dark'] اولیه شما */
+    --bg-color: #0A1929;
+    --calc-bg-color: #112233;
+    --calc-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --display-bg-color: #0A1929;
+    --display-text-color: #9FB3C8;
+    --result-text-color: #E2E8F0;
+    --button-bg-color: #1E293B;
+    --button-hover-bg-color: #334155;
+    --operator-color: #38B2AC;
+    --special-button-color: #F9826C;
+    --equals-button-bg: #38B2AC;
+    --equals-button-color: #0A1929;
+    --theme-icon-color: #9FB3C8;
+
+    --pwa-primary: #0A1929;
+    --pwa-secondary: #112233;
+    --pwa-text: #E6EDF3;
+    --pwa-muted: #9BA7B4;
+    --pwa-overlay: rgba(0,0,0,0.6);
+    --pwa-radius: 12px;
+    --pwa-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* Auto dark theme (system preference) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --pwa-primary: #0A1929;
+        --pwa-secondary: #112233;
+        --pwa-text: #E6EDF3;
+        --pwa-muted: #9BA7B4;
+        --pwa-overlay: rgba(0,0,0,0.6);
+        --pwa-radius: 12px;
+        --pwa-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "3a1f52e4-7f6b-403e-bb3e-847e8b2f2390",
+    "title": "مستندات API",
+    "url": "https://example.com/docs",
+    "ts": 1692952800000,
+    "icon": "https://www.google.com/s2/favicons?domain=example.com&sz=64"
+  },
+  {
+    "id": "95c023d9-658e-4bfc-a2a8-5e1b5a8e3a48",
+    "title": "وبلاگ تیم",
+    "url": "https://blog.example.com",
+    "ts": 1692866400000,
+    "icon": "https://www.google.com/s2/favicons?domain=blog.example.com&sz=64"
+  },
+  {
+    "id": "16bbfcb1-d2f2-4c2d-9362-ec9b5c571a5f",
+    "title": "گیت‌هاب",
+    "url": "https://github.com",
+    "ts": 1692772800000,
+    "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=64"
+  }
+]
+

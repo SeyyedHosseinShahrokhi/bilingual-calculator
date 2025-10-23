@@ -1,0 +1,12 @@
+# اجازه به همه ربات‌ها برای خزش سایت
+User-agent: *
+Allow: /
+
+# جلوگیری از ایندکس مسیرهای غیر ضروری
+Disallow: /tests/
+Disallow: /admin/
+Disallow: /error/
+
+# لینک نقشه سایت (دامنه را جایگزین کن)
+Sitemap: https://yourdomain.com/sitemap.xml
+
