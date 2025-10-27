@@ -1,5 +1,5 @@
 const CACHE_NAME = 'calculator-app-v1.6';
-const OFFLINE_URL = '/pages/offline.html';
+const OFFLINE_URL = '/views/offline.html';
 
 const STATIC_FILES = [
     '/',
