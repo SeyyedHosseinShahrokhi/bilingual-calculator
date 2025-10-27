@@ -1,79 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="title">آفلاین هستیم!</title>
-  <meta name="description" content="آفلاین" data-i18n-attr-content="description">
-
-  <!-- رنگ تم برای مرورگر - این‌ها با جاوااسکریپت بروزرسانی می‌شوند -->
-  <meta name="theme-color" id="theme-color-light" media="(prefers-color-scheme: light)" content="#F0F4F8">
-  <meta name="theme-color" id="theme-color-dark" media="(prefers-color-scheme: dark)" content="#0b2230">
-
-  <!-- Icons -->
-  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
-  <link rel="icon" href="/assets/icons/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-
-  <link rel="stylesheet" href="/assets/css/fonts.css">
-  <link rel="stylesheet" href="/assets/css/variables.css">
-  <link rel="stylesheet" href="/assets/css/styles-offline.css">
-
-  <!-- اسکریپت تم باید در head باشد تا از چشمک زدن (FOUC) جلوگیری کند -->
-  <script src="/assets/js/theme.js"></script>
-</head>
-<body>
-
-<main class="offline-page">
-  <div class="offline-page__animation">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-      <defs>
-        <linearGradient id="robot-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#4A5568;" />
-          <stop offset="100%" style="stop-color:#2D3748;" />
-        </linearGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <circle cx="15" cy="20" r="1" fill="#E2E8F0" class="star star1" />
-      <circle cx="85" cy="30" r="1.2" fill="#E2E8F0" class="star star2" />
-      <circle cx="60" cy="80" r="0.8" fill="#E2E8F0" class="star star3" />
-      <circle cx="30" cy="65" r="0.9" fill="#E2E8F0" class="star star1" />
-      <g class="robot-body">
-        <circle cx="50" cy="40" r="12" fill="url(#robot-gradient)" stroke="#718096" stroke-width="1"/>
-        <line x1="50" y1="28" x2="50" y2="20" stroke="#718096" stroke-width="1.5"/>
-        <circle cx="50" cy="18" r="2" fill="#4FD1C5" filter="url(#glow)"/>
-        <circle cx="45" cy="40" r="2" fill="#1A202C"/>
-        <circle cx="55" cy="40" r="2" fill="#1A202C"/>
-        <rect x="40" y="52" width="20" height="25" rx="5" fill="url(#robot-gradient)" stroke="#718096" stroke-width="1"/>
-      </g>
-    </svg>
-  </div>
-
-  <h1 class="offline-page__title">ارتباط با کهکشان محاسبات قطع شد!</h1>
-  <p class="offline-page__text">مثل اینکه اینترنت به یک خواب عمیق کیهانی رفته. تا بیدار بشه، ما اینجا هواتو داریم.</p>
-
-  <div class="fun-fact">
-    <span class="fun-fact__icon">💡</span>
-    <p class="fun-fact__text">
-      <strong>آیا می‌دانستید؟</strong> عدد گوگول (Googol) یعنی یک عدد ۱ و صد صفر جلوی آن. این عدد از تعداد اتم‌های کل جهان هستی هم بیشتر است!
-    </p>
-  </div>
-
-  <button class="offline-page__cta button">دوباره تلاش کن</button>
-</main>
-
-<div id="reconnect-toast" class="toast">
-  اینترنت برگشت! داریم برمی‌گردیم سر محاسبات...
-</div>
-
-<script src="/assets/js/script-offline.js" defer></script>
-</body>
-</html>
