@@ -31,7 +31,7 @@ Bilingual Calculator (FA/EN) Progressive Web App
 .
 ├── index.html          # صفحه اصلی
 ├── 404.html            # صفحه خطا
-├── pages/              # صفحات داخلی (history, report, offline)
+├── views/              # صفحات داخلی (history, report, offline)
 ├── assets/
 │   ├── css/            # استایل‌ها
 │   ├── js/             # اسکریپت‌ها
@@ -100,7 +100,7 @@ It provides basic and advanced calculations, offline functionality, responsive d
 .
 ├── index.html          # Main entry point
 ├── 404.html            # Error page
-├── pages/              # Internal pages (history, report, offline)
+├── views/              # Internal pages (history, report, offline)
 ├── assets/
 │   ├── css/            # Stylesheets
 │   ├── js/             # JavaScript files
